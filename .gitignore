@@ -288,4 +288,6 @@ $RECYCLE.BIN/
 *.hea
 *.h5
 
+lead1_df.csv
+
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,jupyternotebooks,visualstudiocode,python,vim
