@@ -287,8 +287,7 @@ $RECYCLE.BIN/
 *.dat
 *.hea
 *.h5
-/root/harbud/ecg/custom_file/*
-/root/harbud/ecg/custom_file/**
+ecg/custom_file/
 lead1_df.csv
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,jupyternotebooks,visualstudiocode,python,vim
