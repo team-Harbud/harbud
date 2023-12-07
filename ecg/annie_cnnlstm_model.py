@@ -7,19 +7,19 @@ class CNNLSTMModel(nn.Module):
         super(CNNLSTMModel, self).__init__()
         
         # 첫번째 Convolutional Block
-        self.conv1 = nn.Conv1d(in_channels=1, out_channels=64, kernel_size=30, stride=1)
+        self.conv1 = nn.Conv1d(in_channels=1, out_channels=64, kernel_size=20, stride=1)
         self.relu1 = nn.ReLU()
         self.maxpool1 = nn.MaxPool1d(kernel_size=5, stride=2)
         self.dropout1 = nn.Dropout(p=0.1)
 
         # 두번째 Convolutional Block
-        self.conv2 = nn.Conv1d(in_channels=64, out_channels=32, kernel_size=30, stride=1)
+        self.conv2 = nn.Conv1d(in_channels=64, out_channels=32, kernel_size=20, stride=1)
         self.relu2 = nn.ReLU()
         self.maxpool2 = nn.MaxPool1d(kernel_size=5, stride=2)
         self.dropout2 = nn.Dropout(p=0.1)
 
         # 세번째 Convolutional Block
-        self.conv3 = nn.Conv1d(in_channels=32, out_channels=16, kernel_size=30, stride=1)
+        self.conv3 = nn.Conv1d(in_channels=32, out_channels=16, kernel_size=20, stride=1)
         self.relu3 = nn.ReLU()
         self.maxpool3 = nn.MaxPool1d(kernel_size=5, stride=2)
         self.dropout3 = nn.Dropout(p=0.1)
