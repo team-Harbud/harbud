@@ -49,6 +49,7 @@ def test_model(model, test_loader, data_name):
     test_auroc = roc_auc_score(test_targets, test_preds)
     test_auprc = average_precision_score(test_targets, test_preds)
 
+
     # wandb를 사용해 Confusion Matrix 생성 및 로깅
     wandb_confmat = wandb.plot.confusion_matrix(
         preds=np.round(np.array(test_preds) > optimal_threshold), 
