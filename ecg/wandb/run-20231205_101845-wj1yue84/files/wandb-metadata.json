@@ -1,0 +1,90 @@
+{
+    "os": "Linux-5.4.0-99-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2023-12-05T01:18:46.260536",
+    "startedAt": "2023-12-05T01:18:45.163703",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--train"
+    ],
+    "state": "running",
+    "program": "annie_main.py",
+    "codePathLocal": "annie_main.py",
+    "codePath": "ecg/annie_main.py",
+    "git": {
+        "remote": "https://github.com/team-Harbud/harbud.git",
+        "commit": "0a2af504f33a0f46d19d750c857943b65534ccad"
+    },
+    "email": "airy0410@gmail.com",
+    "root": "/root/harbud",
+    "host": "ds-server009",
+    "username": "root",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2194.929,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2194.929,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2194.929,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2194.929,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2194.929,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2194.929,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2194.929,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2194.929,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2194.929,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 48.963348388671875,
+            "used": 29.60103988647461
+        }
+    },
+    "gpu": "Tesla T4",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla T4",
+            "memory_total": 16911040512
+        }
+    ],
+    "memory": {
+        "total": 39.16674041748047
+    }
+}

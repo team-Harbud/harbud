@@ -9,9 +9,13 @@ from sklearn.metrics import roc_curve, auc
 import seaborn as sns
 from annie_data_prep import create_dataloaders
 from annie_cnn_model import SimpleCNN, Custom1DCNNWithBatchNormAndDropout, Custom1DCNN
+from annie_cnnlstm_model import CNNLSTMModel
+
 import json
 import yaml
 import random
+import wandb
+
 
 
 ## 모델 시드 고정 
@@ -26,17 +30,26 @@ if torch.cuda.is_available():
     torch.backends.cudnn.benchmark = False
     
 
-# YAML 파일 불러오기
+
+# YAML 파일 불러오기 및 wandb 초기화
 with open('/root/harbud/ecg/annie_hypprm.yaml', 'r') as file:
     hyperparameters = yaml.load(file, Loader=yaml.FullLoader)
 
-# 하이퍼파라미터 설정값 사용
-learning_rate = hyperparameters['learning_rate']
-batch_size = hyperparameters['batch_size']
-num_epochs = hyperparameters['num_epochs']
-#hidden_units = hyperparameters['hidden_units']
+wandb.init(project='AFIB Detection(Train)',
+           config=hyperparameters
+           )
+wandb.run.name = 'CNN+LSTM'
 
-# 하이퍼파라미터 출력 (선택사항)
+
+# wandb.config에서 하이퍼파라미터 사용
+learning_rate = wandb.config.learning_rate
+batch_size = wandb.config.batch_size
+num_epochs = wandb.config.num_epochs
+# hidden_units = wandb.config.hidden_units (예시로, 필요하다면 사용)
+
+
+
+# 하이퍼파라미터 출력
 print(f"Learning Rate: {learning_rate}")
 print(f"Batch Size: {batch_size}")
 print(f"Number of Epochs: {num_epochs}")
@@ -46,12 +59,13 @@ print(f"Number of Epochs: {num_epochs}")
 
 # 모델을 GPU로 옮기기
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = Custom1DCNN().to(device)
+model = CNNLSTMModel().to(device)
 # Custom1DCNNWithBatchNormAndDropout
 
 # 손실 함수 및 옵티마이저 설정
 criterion = nn.BCEWithLogitsLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=10, factor=0.1, verbose=True)
 
 
 
@@ -69,6 +83,9 @@ def train_model():
     train_loader, val_loader, _ = create_dataloaders(batch_size)
     best_auroc = float('-inf')  # 최고 성능 기록을 위한 초기값 설정
 
+    epochs_no_improve = 0
+    early_stop = False
+    patience = 10
 
     for epoch in range(num_epochs):
         # 훈련 루프
@@ -128,10 +145,29 @@ def train_model():
             'val_auroc': val_auroc
         }
 
-        # 최고 성능 모델 업데이트
+
+        # 스케줄러 업데이트
+        scheduler.step(val_loss)
+
+        # Early Stopping 체크 및 모델 저장
         if val_auroc > best_auroc:
             best_auroc = val_auroc
+            epochs_no_improve = 0
             torch.save(model.state_dict(), 'model.pth')
+        else:
+            epochs_no_improve += 1
+            if epochs_no_improve == patience:
+                print("Early stopping")
+                break
+
+        # log metrics to wandb
+        wandb.log({
+            'train_loss': train_loss,
+            'val_loss': val_loss,
+            'train_auroc': train_auroc,
+            'val_auroc': val_auroc
+        })
+
 
     # 전체 학습 과정의 결과를 JSON 파일로 저장
     with open('annie_best_model_info.json', 'w') as f:
