@@ -7,21 +7,21 @@ class CNNLSTMModel(nn.Module):
         super(CNNLSTMModel, self).__init__()
         
         # 첫번째 Convolutional Block
-        self.conv1 = nn.Conv1d(in_channels=1, out_channels=64, kernel_size=20, stride=1)
+        self.conv1 = nn.Conv1d(in_channels=1, out_channels=64, kernel_size=50, stride=1)
         self.relu1 = nn.ReLU()
-        self.maxpool1 = nn.MaxPool1d(kernel_size=5, stride=2)
+        self.maxpool1 = nn.MaxPool1d(kernel_size=20, stride=2)
         self.dropout1 = nn.Dropout(p=0.1)
 
         # 두번째 Convolutional Block
-        self.conv2 = nn.Conv1d(in_channels=64, out_channels=32, kernel_size=20, stride=1)
+        self.conv2 = nn.Conv1d(in_channels=64, out_channels=32, kernel_size=30, stride=1)
         self.relu2 = nn.ReLU()
-        self.maxpool2 = nn.MaxPool1d(kernel_size=5, stride=2)
+        self.maxpool2 = nn.MaxPool1d(kernel_size=20, stride=2)
         self.dropout2 = nn.Dropout(p=0.1)
 
         # 세번째 Convolutional Block
-        self.conv3 = nn.Conv1d(in_channels=32, out_channels=16, kernel_size=20, stride=1)
+        self.conv3 = nn.Conv1d(in_channels=32, out_channels=16, kernel_size=10, stride=1)
         self.relu3 = nn.ReLU()
-        self.maxpool3 = nn.MaxPool1d(kernel_size=5, stride=2)
+        self.maxpool3 = nn.MaxPool1d(kernel_size=20, stride=2)
         self.dropout3 = nn.Dropout(p=0.1)
 
         # LSTM Block
@@ -46,6 +46,8 @@ class CNNLSTMModel(nn.Module):
         x = self.dropout1(self.maxpool1(self.relu1(self.conv1(x))))
         x = self.dropout2(self.maxpool2(self.relu2(self.conv2(x))))
         x = self.dropout3(self.maxpool3(self.relu3(self.conv3(x))))
+
+        # print(x.shape) # (32, 16, 591)
 
         # LSTM Layer - LSTM은 추가적인 차원을 요구하기 때문에 차원 조정이 필요합니다.
         x = x.permute(0, 2, 1) # (Batch Size, Sequence Length, Features)
