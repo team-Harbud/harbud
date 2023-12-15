@@ -71,7 +71,7 @@ def test_model(model, test_loader, data_name):
 # PTB 데이터셋을 테스트
 def test_model_ptb():
     try:
-        model = CNNLSTMModel()
+        model = Custom1DCNN()
         model.load_state_dict(torch.load('model.pth'))
         _, _, test_loader = create_dataloaders()
         test_model(model, test_loader, "PTB")
@@ -82,7 +82,7 @@ def test_model_ptb():
 # SPH 데이터셋을 테스트
 def test_model_sph():
     try:
-        model = CNNLSTMModel()
+        model = Custom1DCNN()
         model.load_state_dict(torch.load('model.pth'))
         sph_loader = load_sph_data()
         test_model(model, sph_loader, "SPH")

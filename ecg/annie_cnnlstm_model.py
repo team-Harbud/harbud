@@ -13,15 +13,15 @@ class CNNLSTMModel(nn.Module):
         self.dropout1 = nn.Dropout(p=0.1)
 
         # 두번째 Convolutional Block
-        self.conv2 = nn.Conv1d(in_channels=64, out_channels=32, kernel_size=30, stride=1)
+        self.conv2 = nn.Conv1d(in_channels=64, out_channels=32, kernel_size=10, stride=1)
         self.relu2 = nn.ReLU()
-        self.maxpool2 = nn.MaxPool1d(kernel_size=20, stride=2)
+        self.maxpool2 = nn.MaxPool1d(kernel_size=10, stride=2)
         self.dropout2 = nn.Dropout(p=0.1)
 
         # 세번째 Convolutional Block
-        self.conv3 = nn.Conv1d(in_channels=32, out_channels=16, kernel_size=10, stride=1)
+        self.conv3 = nn.Conv1d(in_channels=32, out_channels=16, kernel_size=5, stride=1)
         self.relu3 = nn.ReLU()
-        self.maxpool3 = nn.MaxPool1d(kernel_size=20, stride=2)
+        self.maxpool3 = nn.MaxPool1d(kernel_size=5, stride=2)
         self.dropout3 = nn.Dropout(p=0.1)
 
         # LSTM Block
@@ -61,7 +61,3 @@ class CNNLSTMModel(nn.Module):
         # Output Layer - 시그모이드 활성화 함수를 사용하여 0과 1 사이의 값을 출력
         x = torch.sigmoid(self.output(x))
         return x
-
-# 모델 인스턴스화 및 요약
-model = CNNLSTMModel()
-print(model)

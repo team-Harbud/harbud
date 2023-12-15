@@ -16,6 +16,8 @@ def main(train, test):
         test_model_sph()   # SPH 데이터셋으로 모델 평가
         print("Testing completed.")
 
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Train and/or test the CNN model.')
     parser.add_argument('--train', action='store_true', help='Train the model')

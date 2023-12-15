@@ -32,13 +32,13 @@ if torch.cuda.is_available():
 
 
 # YAML 파일 불러오기 및 wandb 초기화
-with open('/root/harbud/ecg/annie_hypprm.yaml', 'r') as file:
+with open('./annie_hypprm.yaml', 'r') as file:
     hyperparameters = yaml.load(file, Loader=yaml.FullLoader)
 
 wandb.init(project='AFIB Detection(Train)',
            config=hyperparameters
            )
-wandb.run.name = 'CNN+LSTM'
+wandb.run.name = 'cnn+lstm'
 
 
 # wandb.config에서 하이퍼파라미터 사용
@@ -46,7 +46,6 @@ learning_rate = wandb.config.learning_rate
 batch_size = wandb.config.batch_size
 num_epochs = wandb.config.num_epochs
 # hidden_units = wandb.config.hidden_units (예시로, 필요하다면 사용)
-
 
 
 # 하이퍼파라미터 출력
@@ -59,13 +58,13 @@ print(f"Number of Epochs: {num_epochs}")
 
 # 모델을 GPU로 옮기기
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = CNNLSTMModel().to(device)
+model = Custom1DCNN().to(device)
 # Custom1DCNNWithBatchNormAndDropout
 
 # 손실 함수 및 옵티마이저 설정
 criterion = nn.BCEWithLogitsLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=10, factor=0.1, verbose=True)
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=5, factor=0.1, verbose=True)
 
 
 
@@ -153,7 +152,7 @@ def train_model():
         if val_auroc > best_auroc:
             best_auroc = val_auroc
             epochs_no_improve = 0
-            torch.save(model.state_dict(), 'model.pth')
+            torch.save(model.state_dict(), f'1dcnn_{epoch:02d}-{val_auroc:.4f}.pth')
         else:
             epochs_no_improve += 1
             if epochs_no_improve == patience:
