@@ -8,8 +8,12 @@
 
 ### Duration : 2023/11/6 - 2023/12/15
 
-PTB_XL과  SPH데이터가 빠져 있음.
-아래에서 다운로드하여 각각의 data폴더에 넣어줘야함.
+### 대용량 파일 업데이트 안되어 있음
+- PTB_XL과  SPH데이터가 빠져 있음.
+  아래에서 다운로드하여 각각의 data폴더에 넣어줘야함.
+- 각 py혹은 ipynb파일에서 customfile의 주석을 풀고 생성해주어야함
+
+----
 
 1. PTB-XL, a large publicly available electrocardiography dataset
 
