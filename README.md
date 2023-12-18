@@ -69,7 +69,7 @@
 1. PTB-XL, a large publicly available electrocardiography dataset ([https://physionet.org/content/ptb-xl/1.0.3/](https://physionet.org/content/ptb-xl/1.0.3/))
 2. SPH, A large-scale multi-label 12-lead electrocardiogram database with standardized diagnostic statements ([https://doi.org/10.6084/m9.figshare.c.5779802.v1](https://doi.org/10.6084/m9.figshare.c.5779802.v1))
 
-![Untitled](%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB%204eaa8787ef5f407d803cff5b0c412b44/Untitled.png)
+![Untitled](README/Untitled.png)
 
 - **PTB-XL과 SPH의** 심전도 데이터는 12개의 리드가 있다.
 
@@ -79,9 +79,9 @@
 
         AFIB( 'Atrial Fibrillation', 심방 세동)여부를 1,0으로 라벨링하여 예측한다.
 
-![Untitled](%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB%204eaa8787ef5f407d803cff5b0c412b44/Untitled%201.png)
+![Untitled](README/Untitled%201.png)
 
-![Untitled](%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB%204eaa8787ef5f407d803cff5b0c412b44/Untitled%202.png)
+![Untitled](README/Untitled%202.png)
 
 ---
 
@@ -115,7 +115,7 @@ PTB-XL 데이터 상에 나이와 성별에 따른 심방세동 환자 비율이
 
 Confusion matrix, Sensitivity(Recall), Specificity, **AUROC (Area Under the Receiver Operating Characteristics)** 등 이진 분류 성능 평가에 사용되는 지표 활용
 
-![Untitled](%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB%204eaa8787ef5f407d803cff5b0c412b44/Untitled%203.png)
+![Untitled](README/Untitled%203.png)
 
 ## **문서화 작업**
 
@@ -127,7 +127,7 @@ Confusion matrix, Sensitivity(Recall), Specificity, **AUROC (Area Under the Rece
 
 ## 마일스톤
 
-![Untitled](%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB%204eaa8787ef5f407d803cff5b0c412b44/Untitled%204.png)
+![Untitled](README/Untitled%204.png)
 
 ## 개발 일정
 
@@ -176,21 +176,14 @@ Confusion matrix, Sensitivity(Recall), Specificity, **AUROC (Area Under the Rece
 
 - **노션 예시**
     
-    ![Untitled](%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB%204eaa8787ef5f407d803cff5b0c412b44/Untitled%205.png)
+    ![Untitled](README/Untitled%205.png)
     
-    ![Untitled](%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB%204eaa8787ef5f407d803cff5b0c412b44/Untitled%206.png)
+    ![Untitled](README/Untitled%206.png)
     
-    ![Untitled](%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB%204eaa8787ef5f407d803cff5b0c412b44/Untitled%207.png)
+    ![Untitled](README/Untitled%207.png)
     
-    ![Untitled](%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%AB%204eaa8787ef5f407d803cff5b0c412b44/Untitled%208.png)
+    ![Untitled](README/Untitled%208.png)
     
-
----
-
-## 역할 배분
-
-- 팀장 장보경
-- 팀원 심성식, 정충원
 
 ---
 
