@@ -79,33 +79,6 @@
 
 ![Untitled](README/Untitled%202.png)
 
----
-
-## 개발 계획 및 일정(DS)
-
-## EDA
-
-**자체적인 EDA** 뿐만 아니라 다양한 **논문**과 **캐글** 등에서 EDA을 **참고 및 구현**해본다.
-
-PTB-XL, SPH 데이터에서 **심박수** 외에 공통적인 데이터 중 **성별**과 **나이**를 사용할 예정.
-
-PTB-XL 데이터 상에 나이와 성별에 따른 심방세동 환자 비율이 의미를 보이고 있으며 관련해서 검색한 내용도 해당 주장을 뒷받침해준다. 
-
-심방세동 가진 환자의 56.6%가 65세 이상이. 모든 연령 대에서 남자가 여자보다 빈도가 높았고, 특히 남녀 모두 80세 이상에서 빈도가 가장 높았다.
-
-입니다. CDC에 따르면 **65세 미만 인구 중 약 2%와 만 65세 이상 인구 중 약 9%**가 심방세동을 앓고 있습니다.[5]
-
-## AI 모델 및 방법
-
-**전처리 프로세스 (학습/평가 데이터 분리, 정규화 등) + 학습 모듈(Dataloader, tranier 등) 개발 + 학습 + 평가, … 등 머신러닝/딥러닝 전체 사이클을 이해하고, 실제 파이썬 스크립트를 작성**
-
-- 다양한 ML모델 뿐만 아니라 CNN, RNN, LSTM, Tranformer등 모델을 활용해본다.
-    - 사용하는 **심전도 데이터는 1-Dimension 데이터로서** 500Hz로 10초 동안 수집된 데이터를 사용하므로, 총 5,000개의 timestep을 갖는 신호 데이터를 입력 데이터로 활용하기 때문에 **각 모델 (CNN, RNN, Transformer)이 요구하는 형태에 맞게 Shape을 맞춰서 학습**
-    - 추가: XAI (Explainable AI) 기법 적용. Grad-CAM 기법을 습득하여 CNN 모델과 함께 적용하여, 학습한 모델이 입력 데이터의 어느 부분을 보고 추론하였는지 **히트맵 형태로 시각화**
-- Activation, Loss function, Optimizer, Dropout, Batch normalization 등 딥러닝에 활용되는 테크닉 알고리즘들을 공부해보고 이를 실제 모델에 반영
-    - 생체신호 전처리에 특화된 **Resampling, Normalization(min-max, z-score)** 등의 전처리 기법들을 적용
-- 이진 분류 문제에서 클래스 비율이 불균형한 경우에 사용되는 Under/Over-sampling 방법을 적용해보거나, Focal loss 에 대하여 학습한 뒤 적용
-- 국내/해외 논문 또는 캐글(Kaggle) 등에서 활용된 접근 방법들을 찾아보고, 본 프로젝트에 적용하거나 새로운 모델 개발
 
 ## 평  가
 
@@ -113,53 +86,6 @@ Confusion matrix, Sensitivity(Recall), Specificity, **AUROC (Area Under the Rece
 
 ![Untitled](README/Untitled%203.png)
 
-## **문서화 작업**
-
-- 읽는 사람이 이해하기 쉽도록 **공부한 내용에 대해서 노션에 기록**
-- 작성한 모든 코드에 대해서 주석 및 설명을 작성
-    - **함수에 대한 설명과 입력/출력 변수에 대한 설명**
-
----
-
-## 마일스톤
-
-![Untitled](README/Untitled%204.png)
-
-## 개발 일정
-
-### **2023 / 11 / 10 - 13 (7일)**
-
-- 기획안 작성
-- 데이터 이해와 탐색 및 관련 모델 리서치와 해당 도메인 지식 탐구.
-- 선행적 EDA
-- 모델 탐구 및 관련 모델 지식 학습
-
-### **2023 / 11 / 14 - 22 (8일)**
-
-- EDA
-- 선행적 모델 탐색 및 모델링
-
-### **2023 / 11 / 23 - 12/ 1 (9일)**
-
-- ML, DL 모델 생성 및 고도화
-- 중간발표 준비
-
-### **2023 / 12 / 2 - 10 (10일)**
-
-- 모델의 고도화
-
-### **2023 / 12 / 11 - 13 (3일)**
-
-- 프로젝트 자료 문서화 및 발표준비
-- 모델 고도화
-- 추가 연구 일정
-
-### **2023 / 12 / 14**
-
-- 발표 준비 및 리허설, QNA 준비
-- 발표자료에 12 / 11 - 13일 사이에 이루어진 고도화 및 추가 연구부분 추가
-    
----
 
 ## 활용 방안 및 기대효과
 
@@ -167,21 +93,7 @@ Confusion matrix, Sensitivity(Recall), Specificity, **AUROC (Area Under the Rece
 
 웨어러블 기기나, 가정용 의료기기 혹은 원격 진료 분야에서 심방세동을 포함한 심혈관 질환(CVDs)을 가진 사람을 조기 발견하여 적기에 치료가 이루어질 수 있도록 도울 수 있다.
 
----
 
-**REFERENCES** ([https://arxiv.org/pdf/2004.13701.pdf](https://arxiv.org/pdf/2004.13701.pdf))
-
-[1] E. Wilkins, L. Wilson, K. Wickramasinghe, P. Bhatnagar, J. Leal,
-R. Luengo-Fernandez et al., European Cardiovascular Disease Statistics
-2017. Belgium: European Heart Network, 2 2017.
-
-[2] G. R. Dagenais, D. P. Leong, S. Rangarajan, F. Lanas, P. LopezJaramillo, R. Gupta et al., “Variations in common diseases, hospital admissions, and deaths in middle-aged adults in 21 countries from five continents (PURE): a prospective cohort study,” The Lancet, Sep. 2019
-
-[3] S. M. Salerno, P. C. Alguire, and H. S. Waxman, “Competency in
-interpretation of 12-lead electrocardiograms: A summary and appraisal of published evidence,” Annals of Internal Medicine, vol. 138, no. 9, p.751, May 2003.
-[4] G. Fent, J. Gosai, and M. Purva, “Teaching the interpretation of electrocardiograms: Which method is best?” Journal of Electrocardiology, vol. 48, no. 2, pp. 190–193, Mar. 2015.
-
-[5] 정 준 훈, 한국건강관리협회 경상남도지부 내과, 40세 이상 성인병 검진에서의 심방세동의 빈도와위험인자에 관한 연구
 
 ----
 ### DL모델
