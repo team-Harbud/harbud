@@ -13,7 +13,7 @@
   아래에서 다운로드하여 각각의 data폴더에 넣어줘야함.
 - 각 py혹은 ipynb파일에서 customfile의 주석을 풀고 생성해주어야함
 
-----
+---
 
 1. PTB-XL, a large publicly available electrocardiography dataset
 
@@ -28,6 +28,8 @@
     ◦ URL : https://doi.org/10.6084/m9.figshare.c.5779802.v1
 
     ◦ 다운로드 : 홈페이지 하단의 ‘ECG records’ 와 ‘The attributes of ECG records’ 파일을 직접 다운로드.
+
+   ----
 
 
 ### DL모델
