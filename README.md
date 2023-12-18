@@ -162,29 +162,7 @@ Confusion matrix, Sensitivity(Recall), Specificity, **AUROC (Area Under the Rece
 
 - 발표 준비 및 리허설, QNA 준비
 - 발표자료에 12 / 11 - 13일 사이에 이루어진 고도화 및 추가 연구부분 추가
-
----
-
-## 프로젝트 관리
-
-- **줌      :  매일 2시 화상회의**
-- **슬   랙   :  소통 및 자료 공유**
-- **노   션   :  자료 및 공부한 내용 공유, 일정관리**
-- **깃허브  :  코드 공유 및 리뷰**
-
-                   ****([https://github.com/team-Harbud/harbud](https://github.com/team-Harbud/harbud))
-
-- **노션 예시**
     
-    ![Untitled](README/Untitled%205.png)
-    
-    ![Untitled](README/Untitled%206.png)
-    
-    ![Untitled](README/Untitled%207.png)
-    
-    ![Untitled](README/Untitled%208.png)
-    
-
 ---
 
 ## 활용 방안 및 기대효과
