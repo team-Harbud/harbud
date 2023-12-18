@@ -19,9 +19,7 @@ PTB_XL과  SPH데이터가 빠져 있음.
 
      wget -r -N -c -np https://physionet.org/files/ptb-xl/1.0.3/ 명령어를 이용하여 다운로드.
 
-2. SPH, A large-scale multi-label 12-lead electrocardiogram database with standardized diagnostic
-
-statements
+2. SPH, A large-scale multi-label 12-lead electrocardiogram database with standardized diagnostic statements
 
     ◦ URL : https://doi.org/10.6084/m9.figshare.c.5779802.v1
 
