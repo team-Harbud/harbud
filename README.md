@@ -4,7 +4,7 @@
 
 ### Team : `하버드(HeartBud)`
 
-### Member : ANNIE, ASHTON, JWON
+### Member : 장보경(ANNIE),  심성식(ASHTON),  정충원(JWON)
 
 ### Duration : 2023/11/6 - 2023/12/15
 
@@ -28,10 +28,6 @@
     ◦ URL : https://doi.org/10.6084/m9.figshare.c.5779802.v1
 
     ◦ 다운로드 : 홈페이지 하단의 ‘ECG records’ 와 ‘The attributes of ECG records’ 파일을 직접 다운로드.
-
-----
-## 팀    원 :  장보경(ANNIE)_팀장,  심성식(ASHTON),  정충원(JWON)
-
 ---
 
 ## 문제 배경 및 정의 (DS)
