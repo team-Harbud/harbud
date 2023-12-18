@@ -29,7 +29,7 @@
 
     ◦ 다운로드 : 홈페이지 하단의 ‘ECG records’ 와 ‘The attributes of ECG records’ 파일을 직접 다운로드.
 
-   ----
+----
 
 
 ### DL모델
