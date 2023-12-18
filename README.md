@@ -17,7 +17,7 @@ PTB_XL과  SPH데이터가 빠져 있음.
 
     ◦ 다운로드 : 홈페이지 하단의 ‘Download the ZIP file’ 버튼을 누르거나,
 
-wget -r -N -c -np https://physionet.org/files/ptb-xl/1.0.3/ 명령어를 이용하여 다운로드.
+     wget -r -N -c -np https://physionet.org/files/ptb-xl/1.0.3/ 명령어를 이용하여 다운로드.
 
 2. SPH, A large-scale multi-label 12-lead electrocardiogram database with standardized diagnostic
 
